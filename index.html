@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Voice Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🎙️ AI Voice Detection</h1>
+
+    <form id="uploadForm">
+        <input type="file" id="audio" accept=".mp3,.wav" required>
+        
+        <select id="language">
+            <option value="English">English</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Tamil">Tamil</option>
+            <option value="Telugu">Telugu</option>
+            <option value="Malayalam">Malayalam</option>
+        </select>
+
+        <button type="submit">Analyze Voice</button>
+    </form>
+
+    <div id="loading" style="display:none;">Analyzing audio...</div>
+
+    <div id="result"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
