@@ -2,29 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>AI Voice Detector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOICE-AI Sentinel</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
-    <h1>🎙️ AI Voice Detection</h1>
+    <h1>VOICE-AI SENTINEL</h1>
 
     <form id="uploadForm">
-        <input type="file" id="audio" accept=".mp3,.wav" required>
+        <div class="upload-box" onclick="document.getElementById('audio').click()">
+            <label for="audio" id="file-label">⚡ Drop Audio or Click to Upload</label>
+            <input type="file" id="audio" accept=".mp3,.wav" required class="hidden-input" title="Upload audio file">
+        </div>
         
-        <select id="language">
-            <option value="English">English</option>
-            <option value="Hindi">Hindi</option>
-            <option value="Tamil">Tamil</option>
-            <option value="Telugu">Telugu</option>
-            <option value="Malayalam">Malayalam</option>
+        <label for="language" id="language-label">Select Language:</label>
+        <select id="language" aria-labelledby="language-label">
+            <option value="English">System: English</option>
+            <option value="Hindi">System: Hindi</option>
+            <option value="Tamil">System: Tamil</option>
+            <option value="Telugu">System: Telugu</option>
+            <option value="Malayalam">System: Malayalam</option>
         </select>
 
-        <button type="submit">Analyze Voice</button>
+        <button type="submit">Initialize Analysis</button>
     </form>
 
-    <div id="loading" style="display:none;">Analyzing audio...</div>
+    <div id="loading">
+        <div class="scanner"></div>
+        <p>DECODING NEURAL PATTERNS...</p>
+    </div>
 
     <div id="result"></div>
 </div>
